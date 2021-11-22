@@ -8,43 +8,59 @@ public class Player : MonoBehaviour
     private float verticalInput;
     public float Speed = 10f;
     public float Speed1 = 10f;
-    public float xRange = 16;
-    public float zRange = 16;
-    public float menoszRange = -1.5f;
+    private float xRange = 16;
+    private float zRangeUp = 16;
+    private float zRangeDown = -1.5f;
+
+    public GameObject projectilPrefab;
  
 
-    // Start is called before the first frame update
     void Start()
     {
-        
+       
     }
 
-    // Update is called once per frame
+
     void Update()
     {
+
+        //Configura los inputs horizontales y verticales 
         horizontalInput = Input.GetAxis("Horizontal");
         verticalInput = Input.GetAxis("Vertical");
+       
+        //Da la orden a los inputs previamente configurados: la 1 es para moverse en X y el 2 para moverse en Z
         transform.Translate(Vector3.right * Speed * Time.deltaTime * horizontalInput);
         transform.Translate(Vector3.forward * Speed1 * Time.deltaTime * verticalInput);
 
+        //Limite de pantalla por la derecha
         if(transform.position.x > xRange)
         {
             transform.position = new Vector3(xRange, transform.position.y, transform.position.z);
         }
-        if(transform.position.x < -xRange)
+
+        //Limite de pantalla por la izquierda
+        if (transform.position.x < -xRange)
         {
             transform.position = new Vector3(-xRange, transform.position.y, transform.position.z);
         }
-        
-        if(transform.position.z > zRange)
+
+        //Limite de pantalla por arriba 
+        if (transform.position.z > zRangeUp)
         {
-            transform.position = new Vector3(transform.position.x, transform.position.y, zRange);
+            transform.position = new Vector3(transform.position.x, transform.position.y, zRangeUp);
         }
-       
-        if(transform.position.z < menoszRange)
+
+        //Limite de pantalla por abajo
+        if (transform.position.z < zRangeDown)
         {
-            transform.position = new Vector3(transform.position.x, transform.position.y, menoszRange);
+            transform.position = new Vector3(transform.position.x, transform.position.y, zRangeDown);
         }
         
+        //Disparo 
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            Instantiate(projectilPrefab, transform.position, projectilPrefab.transform.rotation);
+        }
+
     }
 }
