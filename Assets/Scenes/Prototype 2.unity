@@ -551,8 +551,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5c606a2fe614df409a242ba0a83480a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animalPrefab: {fileID: 7388939736030821587, guid: 4125df8fd0ad8f546be14ef69ff32d03,
-    type: 3}
+  animalPrefabs:
+  - {fileID: 7388939736030821587, guid: 4125df8fd0ad8f546be14ef69ff32d03, type: 3}
+  - {fileID: 7069140392150981918, guid: b018df3fc86cf6a40b7cc0f2694a6505, type: 3}
+  - {fileID: 581033905137843640, guid: 58c894c69eae2c840b6932300c494d00, type: 3}
   SpawnPosition: {x: 0, y: 0, z: 25}
   xRange: 15
 --- !u!4 &712971025
@@ -620,7 +622,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 890ee473ffd71ba4b9a7cd5ad23df0db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 15
+  Speed: 22
   Speed1: 15
   projectilPrefab: {fileID: 4315245418833080671, guid: f9df83cc8b322f74194cd1c3fb762a3a,
     type: 3}
@@ -714,7 +716,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100000, guid: fc01a3bb589cebc4aa10892db165243b, type: 3}
       propertyPath: m_Name
-      value: SimpleFarmer_FarmWrangler_Black (1)
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: fc01a3bb589cebc4aa10892db165243b, type: 3}
       propertyPath: m_RootOrder

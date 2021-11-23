@@ -13,6 +13,9 @@ GameObject:
   - component: {fileID: 4315245418831146911}
   - component: {fileID: 4315245418497909056}
   - component: {fileID: -4397465447816388752}
+  - component: {fileID: 6850535398413847087}
+  - component: {fileID: 3759869686329469358}
+  - component: {fileID: 7538635641646830844}
   m_Layer: 0
   m_Name: Projectil
   m_TagString: Untagged
@@ -95,7 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 993bd35bcba4fa248aa07f21c6eeb70f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 15
+  Speed: 10
 --- !u!114 &-4397465447816388752
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -108,3 +111,44 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 741e941f0fd59f343bb0b41311f36a5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &6850535398413847087
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4315245418833080671}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.51974, y: 0.1813125, z: 0.51914847}
+  m_Center: {x: 0, y: 0.0006492436, z: -0.0006492734}
+--- !u!114 &3759869686329469358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4315245418833080671}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 399a368d0aa177542ad1d3eeff832494, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!54 &7538635641646830844
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4315245418833080671}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0

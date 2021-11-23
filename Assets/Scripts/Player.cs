@@ -57,7 +57,7 @@ public class Player : MonoBehaviour
         }
         
         //Disparo 
-        if(Input.GetKeyDown(KeyCode.Space))
+        if(Input.GetKeyDown(KeyCode.M))
         {
             Instantiate(projectilPrefab, transform.position, projectilPrefab.transform.rotation);
         }
