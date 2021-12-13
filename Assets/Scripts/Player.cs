@@ -6,31 +6,24 @@ public class Player : MonoBehaviour
 {
     private float horizontalInput;
     private float verticalInput;
-    public float Speed = 10f;
-    public float Speed1 = 10f;
+    private float Speed = 22f;
+    //public float Speed1 = 10f;
     private float xRange = 16;
-    private float zRangeUp = 16;
-    private float zRangeDown = -1.5f;
+    //private float zRangeUp = 16;
+    //private float zRangeDown = -1.5f;
 
     public GameObject projectilPrefab;
  
-
-    void Start()
-    {
-       
-    }
-
-
     void Update()
     {
 
         //Configura los inputs horizontales y verticales 
         horizontalInput = Input.GetAxis("Horizontal");
-        verticalInput = Input.GetAxis("Vertical");
-       
+        //verticalInput = Input.GetAxis("Vertical");
+
         //Da la orden a los inputs previamente configurados: la 1 es para moverse en X y el 2 para moverse en Z
         transform.Translate(Vector3.right * Speed * Time.deltaTime * horizontalInput);
-        transform.Translate(Vector3.forward * Speed1 * Time.deltaTime * verticalInput);
+        //transform.Translate(Vector3.forward * Speed1 * Time.deltaTime * verticalInput);
 
         //Limite de pantalla por la derecha
         if(transform.position.x > xRange)
@@ -44,7 +37,7 @@ public class Player : MonoBehaviour
             transform.position = new Vector3(-xRange, transform.position.y, transform.position.z);
         }
 
-        //Limite de pantalla por arriba 
+        Limite de pantalla por arriba 
         if (transform.position.z > zRangeUp)
         {
             transform.position = new Vector3(transform.position.x, transform.position.y, zRangeUp);
@@ -57,10 +50,14 @@ public class Player : MonoBehaviour
         }
         
         //Disparo 
-        if(Input.GetKeyDown(KeyCode.M))
+        if(Input.GetKeyDown(KeyCode.Space))
         {
             Instantiate(projectilPrefab, transform.position, projectilPrefab.transform.rotation);
         }
+
+
+        // Rotación
+        transform.Rotate(Vector3.up, turnSpeed * Time.deltaTime * horizontalInput);
 
     }
 }
